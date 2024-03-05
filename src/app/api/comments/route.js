@@ -36,7 +36,7 @@ export const POST = async (req) => {
   try {
     const body = await req.json();
 
-    const comments = await prisma.comment.create({
+    const comment = await prisma.comment.create({
       data: { ...body, userEmail: session.user.email },
     });
 
